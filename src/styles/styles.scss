@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+@import 'variables';
+@import 'html';
+
+//Physicaly Exam
+.dc__StepHead {
+  position: relative;
+  z-index: 1;
+  &.second::before {
+    content: '02';
+  }
+  &.third::before {
+    content: '03';
+  }
+  &::before {
+    content: '01';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    font-size: 130px;
+    color: #e6e6e7;
+    z-index: -1;
+  }
+}
+
+.dc__SliderOuterDiv {
+  position: relative;
+  padding-left: 15%;
+  &.physicalTherapy {
+    .slick-prev {
+      left: 200px;
+    }
+    .slick-next {
+      left: 230px;
+    }
+  }
+  &.preEmployment {
+    .slick-prev {
+      left: 150px;
+    }
+    .slick-next {
+      left: 180px;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    top: -44px;
+    left: 120px;
+    &::before {
+      display: none;
+    }
+  }
+  .slick-next {
+    left: 150px;
+  }
+  .dc__SliderDiv.firstChild {
+    border-top-left-radius: 50px;
+  }
+  .dc__SliderDiv {
+    display: flex !important;
+    height: 440px;
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+.z-9999 {
+  z-index: 9999;
+}
+
+.dc__TableGrid {
+  position: relative;
+  @include Media(575) {
+    overflow-x: auto;
+    .dc__TableHead,
+    .dc__TableBody div {
+      width: max-content;
+      h3,
+      div {
+        width: 150px;
+        &:first-child {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
